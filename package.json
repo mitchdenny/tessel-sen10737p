@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mitchdenny/tessel-sen10737p/issues"
   },
-  "homepage": "https://github.com/mitchdenny/tessel-sen10737p"
+  "homepage": "https://github.com/mitchdenny/tessel-sen10737p",
+  "dependencies": {
+    "tessel": "^0.3.19"
+  }
 }

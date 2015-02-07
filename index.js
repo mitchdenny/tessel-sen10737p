@@ -1,44 +1,31 @@
-function Ranger(hardware) {
+function Ranger(pin) {
   var self = this;
-  self.hardware = hardware;
-  self.signal = self.hardware.pin['G3'];
+  self.signal = pin;
 
   return {
     getDistance: function(callback) {
-      console.log('Setting direction to output.');
-      self.signal.rawDirection(true);
-
-      console.log('Writing LOW.');
-      self.signal.write(false);
+      self.signal.output(1);
 
       setTimeout(function() {
-        console.log('Writing HIGH.');
-        self.signal.write(true);
+        self.signal.rawWrite(0);
+      }, 10);
 
-        setTimeout(function() {
-          console.log('Writing LOW.');
-          self.signal.write(false);
+      self.signal.readPulse('high', 1000, function(err, duration) {
+        if (err) {
+          callback(err, 0);
+          return;
+        }
 
-          console.log('Setting direction to input.');
-          self.signal.rawDirection(false);
+        var distance = ((duration * 1000) / 2) / 29.1;
 
-          console.log('Waiting for pulse.');
-          self.signal.readPulse('HIGH', 1000, function(err, duration) {
-            if (err) {
-              callback(err);
-              return;
-            }
-
-            callback(null, duration);
-          });
-        }, 5);
-      }, 2);
+        callback(null, distance);
+      });
     }
   };
 }
 
-function use(hardware) {
-  var ranger = new Ranger(hardware);
+function use(pin) {
+  var ranger = new Ranger(pin);
   return ranger;
 }
 

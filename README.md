@@ -35,3 +35,12 @@ ranger.getDistance(function (err, distance) {
   });
 };
 ```
+## Wiring
+
+According to [the Seeed Studio wiki](http://www.seeedstudio.com/wiki/Grove_-_Ultrasonic_Ranger), the SEN10737P supports both 3.3V and 5V power source. This means that you can wire-up the sensor directly to the Tessel assuming you are running it from the 3.3V power source. However if you are running from a 5V source you will need to step down the voltage.
+
+The G3 pin on your Tessel's GPIO port supports the underlying ```readPulse(...)``` method that this library uses. Give it a try and if you encounter any problems [post an issue](https://github.com/mitchdenny/tessel-sen10737p/issues) or [hit the Tessel forums](https://forums.tessel.io/).
+
+## Contributions
+
+If you find a bug feel free to [fork the code](https://github.com/mitchdenny/tessel-sen10737p/fork) and submit a pull request.

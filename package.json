@@ -11,12 +11,18 @@
     "url": "https://github.com/mitchdenny/tessel-sen10737p.git"
   },
   "author": "Mitch Denny <mitch@mitchdenny.com> (http://mitchdenny.com/)",
-  "license": "MIT/Apache 2.0",
+  "license": [{
+    "type": "Apache-2.0",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0"
+  }],
   "bugs": {
     "url": "https://github.com/mitchdenny/tessel-sen10737p/issues"
   },
   "homepage": "https://github.com/mitchdenny/tessel-sen10737p",
-  "dependencies": {
-    "tessel": "^0.3.19"
+  "devDependencies": {
+    "tessel": "^0.3.19",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-release": "^0.7.0"
   }
 }

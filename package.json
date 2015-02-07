@@ -1,6 +1,6 @@
 {
   "name": "tessel-sen10737p",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tessel driver for the Grove Ultrasonic Ranger v1.0 (SEN10737P).",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,12 @@
     "url": "https://github.com/mitchdenny/tessel-sen10737p.git"
   },
   "author": "Mitch Denny <mitch@mitchdenny.com> (http://mitchdenny.com/)",
-  "license": [{
-    "type": "Apache-2.0",
-    "url": "http://www.apache.org/licenses/LICENSE-2.0"
-  }],
+  "license": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/mitchdenny/tessel-sen10737p/issues"
   },

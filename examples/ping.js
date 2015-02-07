@@ -7,7 +7,7 @@ var pin = gpio.pin['G3'];
 var ranger = sen10737p.use(pin);
 
 var ping = function() {
-  var distance = ranger.getDistance(function (err, distance) {
+  ranger.getDistance(function (err, distance) {
     if (err) {
       console.log(err);
       return;
